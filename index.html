@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-
-    <!--  link to css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Code Quiz</title>
 </head>
 
     <body>
-
-        <h1>The button Element</h1>
-        
-        <button id="start" type="button" onclick="alert('Hello world!')">Click Me!</button>
-         
      
-        
-   
+          <div class="wrapper">
+            <header>
+              <h1>Welcome to the Coding Quiz!</h1>
+            </header>
+
+            <div class="card">
+              <div class="card-header">
+                <p >Try to answer the following questions within the time limit.</p>
+                <p> Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+              </div>
+              
+              <div class="card-footer">
+                <button id="start" class="btn"type="button" onclick="alert('Timer will start now')">Start Quiz</button>
+              </div>
+            </div>
     <!--set up page
     
     id for buttons
@@ -30,7 +36,10 @@ id = select answer-->
     bootstrap
     js   </script>
 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/Script.js"></script>
+
 
 </body>
 </html>

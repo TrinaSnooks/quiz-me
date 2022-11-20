@@ -70,3 +70,6 @@ var questions =  [
 //game over message
 //enter initials and score
 
+
+
+function game=
