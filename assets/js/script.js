@@ -41,18 +41,6 @@ A block of code that repeats several times. The programmer must specify the numb
 
 //code for answer button
 
-var startBtn = document.querySelector("# start");
-
-var questions =  [
-    {question: "what colour is the sky?",
-    choice1: "Red",
-     choice2: "Blue",
-    choice3: "gray",
-},
-{
-
-}];
-
 
 //Answer question correctly - 
 //go to next question
@@ -70,6 +58,56 @@ var questions =  [
 //game over message
 //enter initials and score
 
+var startBtn = document.querySelector("#start");
+
+var questions = [
+    {
+        question: "what colour is the sky?",
+        choice1: "Red",
+        choice2: "Blue",
+        answer: "gray"
+    },
+    {
+        question: "what time is it",
+        choice1: "1pm",
+        choice2: "2pm",
+        answer: "3pm"
+    },
+    {
+
+    }];
+
+startBtn.addEventListener("click", function () {
+    game();
+});
+
+function game() {
+
+    console.log(questionsArr[questionIndex].question);
+    question.textContent = questionsArr[questionIndex]["question"];
+
+    for (var i = 1; i < 5; i++) {
+        //create element
+        var newBtn = document.createElement("button");
+        //inject content
+        newBtn.textContent = questionsArr[questionIndex]["choice" + i];
+        //append to page
+        choices.appendChild(newBtn);
+    }
+
+    choices.addEventListener("click", function (event) {
+        console.log(event.target.textContent);
+        if (event.target.textContent == questionsArr[questionIndex].answer) {
+            alert("You're Correct!");
+        }
+
+       
+    
+    });
+}
 
 
-function game=
+
+
+
+
