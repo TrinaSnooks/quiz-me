@@ -66,14 +66,22 @@ var choices = document.querySelector("#choices");
 
 var answerChoice1 = document.querySelector("#answerChoice1");
 
+
+//Questions and choices
+//---------FIX
+///////add questions/answers-----
+//////fix loop---
+//////// remove 10 seconds on wrong answers---------------------------
+
+
 var questionsArr = [
     {
-        question: "What color is the sky?",
-        choice1: "Red",
-        choice2: "Violet",
-        choice3: "Purple",
-        choice4: "Blue", 
-        answer: "Blue"
+        question: "What is a Algorithm?",
+        choice1: "Town in Texas",
+        choice2: "Squence of problem-solving steps",
+        choice3: "A colour",
+        choice4: "A number", 
+        answer: "Squence of problem-solving steps",
     },
     {
         question: "What is Park Place?",
@@ -85,6 +93,7 @@ var questionsArr = [
 
     },
 ];
+
 
 var questionIndex = 0;
 
@@ -123,6 +132,9 @@ function game(){
 //--------------------------------------------------------------------------
 //Timer
 
+
+//--------------------------Need to Connect Start button to Timer!!!!/--------------------------------------------------
+
 // Selects element by class
 var timeEl = document.querySelector(".time");
 
@@ -152,9 +164,11 @@ setTime();
 
 //----------------------------------------------------------
 
-//add to local storage
-var student = document.getElementById("student-names");
-var grade = document.getElementById("grades");
+//-----------------------------------Save initials 
+//// ---   Need to fix --- connect scores to initials, display on page, open when game is over
+
+
+
 var comment = document.getElementById("msg");
 var saveButton = document.getElementById("save");
 var savedName = document.getElementById("saved-name");
@@ -162,22 +176,21 @@ var savedName = document.getElementById("saved-name");
 saveButton.addEventListener("click", function(event) {
 event.preventDefault();
 
-var studentGrade = {
-  student: student.value,
-  grade: grade.value,
+var playerInitials = {
   comment: comment.value.trim()
 };
 
-localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+localStorage.setItem("playerInitials", JSON.stringify(playerInitials));
 renderMessage();
 
 });
-
+/*
 function renderMessage() {
-  var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
+  var player  = JSON.parse(localStorage.getItem("playerInitials"));
   if (lastGrade !== null) {
     document.querySelector(".message").textContent = lastGrade.student + 
     " received a/an " + lastGrade.grade
   }
 }
 
+*/
