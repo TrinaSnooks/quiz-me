@@ -58,56 +58,126 @@ A block of code that repeats several times. The programmer must specify the numb
 //game over message
 //enter initials and score
 
+
+
 var startBtn = document.querySelector("#start");
+var question = document.querySelector("#question");
+var choices = document.querySelector("#choices");
 
-var questions = [
+var answerChoice1 = document.querySelector("#answerChoice1");
+
+var questionsArr = [
     {
-        question: "what colour is the sky?",
+        question: "What color is the sky?",
         choice1: "Red",
-        choice2: "Blue",
-        answer: "gray"
+        choice2: "Violet",
+        choice3: "Purple",
+        choice4: "Blue", 
+        answer: "Blue"
     },
     {
-        question: "what time is it",
-        choice1: "1pm",
-        choice2: "2pm",
-        answer: "3pm"
+        question: "What is Park Place?",
+        choice1: "Imaginary",
+        choice2: "In your dreams",
+        choice3: "At McDonalds",
+        choice4: "A property in Monopoly", 
+        answer: "A property in Monopoly"
+
     },
-    {
+];
 
-    }];
+var questionIndex = 0;
 
-startBtn.addEventListener("click", function () {
+startBtn.addEventListener("click", function(){
     game();
 });
 
-function game() {
 
+function game(){
     console.log(questionsArr[questionIndex].question);
-    question.textContent = questionsArr[questionIndex]["question"];
 
-    for (var i = 1; i < 5; i++) {
-        //create element
+    question.textContent = questionsArr[questionIndex]["question"];
+    
+    for(var i = 1; i < 5; i++){
+        //Create Element
         var newBtn = document.createElement("button");
-        //inject content
-        newBtn.textContent = questionsArr[questionIndex]["choice" + i];
-        //append to page
+       
+        //Inject Content
+         newBtn.textContent = questionsArr[questionIndex]["choice" + i];
+        
+         //Append to Page
         choices.appendChild(newBtn);
     }
-
-    choices.addEventListener("click", function (event) {
-        console.log(event.target.textContent);
-        if (event.target.textContent == questionsArr[questionIndex].answer) {
-            alert("You're Correct!");
-        }
-
-       
     
+    choices.addEventListener("click", function(event){
+        console.log(event.target.textContent);
+        if(event.target.textContent == questionsArr[questionIndex].answer){
+            alert("You got it right!");
+        } else {
+            alert("You got it wrong!");
+        }
+        questionIndex;
     });
 }
 
+//--------------------------------------------------------------------------
+//Timer
+
+// Selects element by class
+var timeEl = document.querySelector(".time");
+
+// Selects element by id
+var mainEl = document.getElementById("main");
+
+var secondsLeft = 60;
+
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left";
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      alert("Times Up");
+   
+    }
+
+  }, 1000);
+}
+
+setTime();
 
 
+//----------------------------------------------------------
 
+//add to local storage
+var student = document.getElementById("student-names");
+var grade = document.getElementById("grades");
+var comment = document.getElementById("msg");
+var saveButton = document.getElementById("save");
+var savedName = document.getElementById("saved-name");
 
+saveButton.addEventListener("click", function(event) {
+event.preventDefault();
+
+var studentGrade = {
+  student: student.value,
+  grade: grade.value,
+  comment: comment.value.trim()
+};
+
+localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+renderMessage();
+
+});
+
+function renderMessage() {
+  var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
+  if (lastGrade !== null) {
+    document.querySelector(".message").textContent = lastGrade.student + 
+    " received a/an " + lastGrade.grade
+  }
+}
 

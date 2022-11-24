@@ -1,45 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Code Quiz</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Code Quiz</title>
 </head>
 
-    <body>
-     
-          <div class="wrapper">
-            <header>
-              <h1>Welcome to the Coding Quiz!</h1>
-            </header>
+<body>
 
-            <div class="card">
-              <div class="card-header">
-                <p >Try to answer the following questions within the time limit.</p>
-                <p> Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-              </div>
-              
-              <div class="card-footer">
-                <button id="start" class="btn"type="button" onclick="alert('Timer will start now')">Start Quiz</button>
-              </div>
-            </div>
-    <!--set up page
+  <div class="wrapper">
+    <header>
+      <h1>Welcome to the Coding Quiz!</h1>
+    </header>
+
+
+    <!--Timer and Score-->
+    <section>
+      <h2 style="text-align:center;">Timer:</h2>
+      <h4 class="time" style="text-align:center;"></h4>
+      <h2 style="text-align:center;">Score:</h2>
+      <div id="main"></div>
+    </section>
+
     
-    id for buttons
-id = start quiz
-id = select answer-->
-    
-    <!-- 
-        <script add links
-    bootstrap
-    js   </script>
--->
+    <!--start button, questions and choices-->
+    <section>
+      <div class="card">
+        <div class="card-header">
+          <button class="btn" id="start">Start Quiz</button>
+          <p id="question"></p>
+          <p id="choices"></p>
+        </div>
+      </div>
+    </section>
+
+     <!--footer text -->
+    <section>
+      <div class="card">
+        <div class="card-header">
+          <p>Try to answer the following questions within the time limit.</p>
+          <p> Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- add initials-->
+    <form>
+      <ul>
+        <li>
+          <label for="msg">Initials</label>
+          <textarea id="msg" name="comment"></textarea>
+        </li>
+      </ul>
+      <button id="save">SAVE</button>
+    </form> 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/Script.js"></script>
+    <script src="assets/js/Script.js"></script>
 
 
 </body>
+
 </html>

@@ -8,7 +8,7 @@ html,
 body,
 .wrapper {
   height: 100%;
-  margin: 50px;
+  margin: 40px;
   padding: 0;
 }
 
@@ -41,7 +41,7 @@ header {
   font-size: 19px;
   margin: 0 auto;
   max-width: 800px;
-  padding: 30px 40px;
+  padding: 10px;
   text-align: center;
   
 }
@@ -62,25 +62,8 @@ header {
   min-height: 200px;
 }
 
-/*start button*/
 
-.card-footer {
-  text-align: center;
-}
 
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
 
 /*start button specs*/
 .btn {
