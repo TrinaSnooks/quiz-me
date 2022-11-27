@@ -99,6 +99,7 @@ var questionIndex = 0;
 
 startBtn.addEventListener("click", function(){
     game();
+    setTime();
 });
 
 
@@ -107,6 +108,9 @@ function game(){
 
     question.textContent = questionsArr[questionIndex]["question"];
     
+    //remove provious answers
+    choices.innerHTML="";
+
     for(var i = 1; i < 5; i++){
         //Create Element
         var newBtn = document.createElement("button");
@@ -125,7 +129,9 @@ function game(){
         } else {
             alert("You got it wrong!");
         }
-        questionIndex;
+        questionIndex+=1;
+        
+        game();
     });
 }
 
@@ -159,10 +165,14 @@ function setTime() {
   }, 1000);
 }
 
-setTime();
+
 
 
 //----------------------------------------------------------
+
+//--------------Add score to page-----
+
+
 
 //-----------------------------------Save initials 
 //// ---   Need to fix --- connect scores to initials, display on page, open when game is over
