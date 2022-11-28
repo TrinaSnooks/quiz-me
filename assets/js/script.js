@@ -108,7 +108,7 @@ function game(){
 
     question.textContent = questionsArr[questionIndex]["question"];
     
-    //remove provious answers
+    //remove previous answers
     choices.innerHTML="";
 
     for(var i = 1; i < 5; i++){
