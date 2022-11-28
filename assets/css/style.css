@@ -1,8 +1,15 @@
-*,
+
+
+*/
 *::before,
+
 *::after {
   box-sizing: border-box;
 }
+*/
+
+*, *::after, *::before { box-sizing: border-box; }
+
 
 html,
 body,
@@ -14,7 +21,9 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #eaf3fd;
+  background-color: blanchedalmond
+  
+  /*#eaf3fd;  */
 }
 /*define page size */
 .wrapper {
